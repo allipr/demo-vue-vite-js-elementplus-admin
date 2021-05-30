@@ -6,6 +6,11 @@
 // export default {
 
 // }
+
+//请求mock api
+fetch("/api/getUsers").then((res)=>res.json()).then((data)=>{
+  console.log(data);
+})
 </script>
 
 <style>
