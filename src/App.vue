@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite25" />
+  <!-- <HelloWorld msg="Hello Vue 3 + Vite25" /> -->
+  <router-view></router-view>
   <comp></comp>
 </template>
 

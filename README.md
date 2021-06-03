@@ -30,7 +30,7 @@ npm run dev
 
 ## 插件使用
 
-### 路由vue-router
+### 路由Router
 
 
 
@@ -44,20 +44,86 @@ npm info vue-router
 
 
 
-#### 1、安装路由
+#### 1、安装依赖
 
 > 切换至项目根目录
 
 ```shell
-npm install vue-router@4
+npm install vue-router@4 -S
+# 或者
+npm i vue-router@next -S
 ```
 
-2、导入路由
+#### 2、创建路由
+
+> /src/router/index.js
+
+```js
+// 1.引入依赖
+#导入路由插件
+import { createRouter, createWebHashHistory } from 'vue-router'
+#导入路由配置文件
+import routes from './routes'
+// 2.创建路由
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes:routes,
+})
+// 3.导出路由
+export default router
+```
+
+
+
+#### 3、配置路由
+
+> /src/router/routes.js
+
+```js
+const routes=[
+    {path:'/',component:()=>import('views/home.vue')}
+]
+
+export default routes
+```
+
+
+
+#### 4、挂载路由
 
 /src/main.js
 
 ```js
-import {createRouter,createWebHashHistory} from 'vue-router'
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+
+createApp(App)
+    .use(router)
+    .mount('#app')
+```
+
+#### 5、使用路由
+
+> /src/App.vue
+
+```vue
+<template>
+  <img alt="Vue logo" src="./assets/logo.png" />
+  <!-- <HelloWorld msg="Hello Vue 3 + Vite25" /> -->
+  <router-view></router-view>
+  <comp></comp>
+</template>
+```
+
+
+
+### 状态管理Vuex
+
+#### 1、安装
+
+```shell
+npm i vuex@next -S
 ```
 
 
