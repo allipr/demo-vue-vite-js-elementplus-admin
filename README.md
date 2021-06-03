@@ -30,7 +30,39 @@ npm run dev
 
 ## 插件使用
 
-### （一）模拟数据Mock
+### 路由vue-router
+
+
+
+
+
+查看包信息
+
+```shell
+npm info vue-router
+```
+
+
+
+#### 1、安装路由
+
+> 切换至项目根目录
+
+```shell
+npm install vue-router@4
+```
+
+2、导入路由
+
+/src/main.js
+
+```js
+import {createRouter,createWebHashHistory} from 'vue-router'
+```
+
+
+
+### 模拟数据Mock
 
 #### 1、安装插件
 
