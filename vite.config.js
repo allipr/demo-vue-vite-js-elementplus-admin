@@ -24,7 +24,6 @@ export default defineConfig({
       'utils': resolve(__dirname, 'src/utils'),
       'routes': resolve(__dirname, 'src/routes'),
       'styles': resolve(__dirname, 'src/styles'),
-      'assets': resolve(__dirname, 'src/assets'),
       'plugins': resolve(__dirname, 'src/plugins'),
     },
   },
