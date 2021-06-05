@@ -1,0 +1,24 @@
+// 全局样式入口
+
+// 1.导入样式
+@import './element-ui.scss';
+@import './mixin.scss';
+@import './sidebar.scss';
+@import './transition.scss';
+@import './variable.scss';
+
+// 2.定义样式
+
+// 来自:src/App.vue <style>……</style>
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    // 来自:src/components/HelloWorld.vue  <style scoped>……</style>
+    a {
+        color: #42b983;
+    }
+  }
