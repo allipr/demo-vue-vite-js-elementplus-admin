@@ -1,9 +1,9 @@
 <template>
-    我是头部导航
+    我是左侧边栏
 </template>
 
 <script setup>
-
+    // export default {}
 </script>
 
 <style lang="scss" scoped>

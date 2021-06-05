@@ -1,29 +1,35 @@
 <template>
-    <div class="app-wrapper">
-        <!-- 左侧:侧边栏 -->
-        <div class="sidebar-container"></div>
-        <!-- 右侧:内容容器 -->
-        <div class="main-container">
-            <!-- 顶部导航栏 -->
-            <navbar></navbar>
-            <!-- 下部内容区 -->
-            <app-main></app-main>
-        </div>
-
+    <div class="common-layout">
+        <el-container>
+            <el-aside width="200px">
+                Aside
+                <sidebar class="sidebar-container"></sidebar>
+            </el-aside>
+            <el-container>
+                <el-header>
+                    Header
+                    <navbar />
+                </el-header>
+                <el-main>
+                    Main
+                    <app-main />
+                </el-main>
+            </el-container>
+        </el-container>
     </div>
+
 </template>
 
 <script setup>
-import AppMain from "./components/AppMain.vue"
-import Navbar from "./components/Navbar.vue";
+    import Sidebar from "./components/Sidebar/index.vue";
+    import AppMain from "./components/AppMain.vue";
+    import Navbar from "./components/Navbar.vue";
 </script>
 
 <style lang="scss" scoped>
-@import "styles/mixin.scss"
-.app-wrapper{
-    @inclue clearfix;
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
+    el-container {
+        height: 500px;
+        border: 1px solid #eee;
+        // color: red
+    }
 </style>
