@@ -30,6 +30,78 @@ npm run dev
 
 ## 插件使用
 
+
+
+### 使用UI库
+
+> npm install element-plus --save
+
+#### 1、安装依赖
+
+```npm
+npm install element-plus --save
+```
+
+#### 2、全局引用
+
+##### 2.1、普通方式
+
+- main.js
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+// 1、全局引入element-plus
+import ElementPlus from 'element-plus';//导入组件
+import 'element-plus/lib/theme-chalk/index.css';//导入样式
+// 2、使用UI
+createApp(App)
+    .use(ElementPlus)//使用组件
+    .mount('#app')
+```
+
+- 调试 HelloWorld.vue
+
+```vue
+<template>
+  <el-button type="danger">危险按钮</el-button>
+</template>
+```
+
+##### 2.2、改进方式
+
+- src/plugins/element-plus.js
+
+```js
+// 全局引入element-plus
+import ElementPlus from 'element-plus';//导入组件
+import 'element-plus/lib/theme-chalk/index.css';//导入样式
+
+export default function (app) {
+    //全局
+    app.use(ElementPlus)
+}
+```
+
+- src/main.js
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+
+// UI
+import ElementPlus from 'plugins/element-plus'
+
+const app = createApp(App)
+    .use(router)
+    .use(ElementPlus)
+    .mount('#app')
+```
+
+
+
+#### 3、按需引用
+
 ### 路由Router
 
 
@@ -124,6 +196,70 @@ createApp(App)
 
 ```shell
 npm i vuex@next -S
+```
+
+
+
+### 样式组织sass
+
+> /src/styles目录保存各种样式
+
+#### 1、安装依赖
+
+```shell
+npm i sass -D
+```
+
+#### 2、组织样式 index.scss
+
+> `index.scss`作为出口，组织这些样式，同时编写一些全局样式
+
+```scss
+// 全局样式入口
+
+// 1.导入样式
+@import './element-ui.scss';
+@import './mixin.scss';
+@import './sidebar.scss';
+@import './transition.scss';
+@import './variable.scss';
+
+// 2.定义样式
+
+// 来自:src/App.vue <style>……</style>
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+    // 来自:src/components/HelloWorld.vue  <style scoped>……</style>
+    a {
+        color: #42b983;
+    }
+  }
+```
+
+#### 3、导入样式 main.js
+
+> 在`main.js`中导入
+
+
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+// 路由
+import router from './router'
+// 状态
+
+// 全局样式
+import 'styles/index.scss'
+
+createApp(App)
+    .use(router)
+    .mount('#app')
 ```
 
 

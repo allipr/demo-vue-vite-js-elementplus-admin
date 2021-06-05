@@ -10,6 +10,8 @@
   </p>
 
   <button @click="state.count++">count is: {{ state.count }}</button>
+  <el-button @click="state.count++">count is: {{ state.count }}</el-button>
+  <el-button type="danger">危险按钮111</el-button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -25,9 +27,3 @@ defineProps({
 
 const state = reactive({ count: 0 })
 </script>
-
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>
