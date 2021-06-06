@@ -3,6 +3,7 @@ const routes = [
     // {path:'/',component:()=>import('views/home.vue')},
     {
         path: '/',
+        name: 'Layout',
         component: Layout
     }
 ]
