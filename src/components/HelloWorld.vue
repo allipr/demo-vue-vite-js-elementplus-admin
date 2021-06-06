@@ -8,6 +8,7 @@
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Documentation</a>
   </p>
+  <p @click="$store.commit('add')">store.sate:{{ $store.state.counter }}</p>
 
   <button @click="state.count++">count is: {{ state.count }}</button>
   <el-button @click="state.count++">count is: {{ state.count }}</el-button>
@@ -19,16 +20,16 @@
 </template>
 
 <script setup>
-  import {
-    defineProps,
-    reactive
-  } from 'vue'
+    import {
+        defineProps,
+        reactive
+    } from 'vue'
 
-  defineProps({
-    msg: String
-  })
+    defineProps({
+        msg: String,
+    })
 
-  const state = reactive({
-    count: 0
-  })
+    const state = reactive({
+        count: 0,
+    })
 </script>
