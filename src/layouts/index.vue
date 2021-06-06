@@ -1,29 +1,29 @@
 <template>
-    <div class="common-layout">
-        <el-container>
-            <el-aside width="200px">
-                Aside
-                <sidebar class="sidebar-container"></sidebar>
-            </el-aside>
-            <el-container>
-                <el-header>
-                    Header
-                    <navbar />
-                </el-header>
-                <el-main>
-                    Main
-                    <app-main />
-                </el-main>
-            </el-container>
-        </el-container>
-    </div>
-
+  <div class="common-layout">
+    <el-container>
+      <!-- 侧边栏 -->
+      <el-aside width="200px">
+        <sidebar class="sidebar-container"></sidebar>
+      </el-aside>
+      <!-- 内容容器 -->
+      <el-container>
+        <!-- 顶部导航栏 -->
+        <el-header>
+          <navbar />
+        </el-header>
+        <!-- 内容区 -->
+        <el-main>
+          <app-main />
+        </el-main>
+      </el-container>
+    </el-container>
+  </div>
 </template>
 
 <script setup>
-    import Sidebar from "./components/Sidebar/index.vue";
-    import AppMain from "./components/AppMain.vue";
-    import Navbar from "./components/Navbar.vue";
+    import Sidebar from './components/Sidebar/index.vue'
+    import AppMain from './components/AppMain.vue'
+    import Navbar from './components/Navbar.vue'
 </script>
 
 <style lang="scss" scoped>
