@@ -29,5 +29,9 @@ export default defineConfig({
   },
   plugins: [vue(), viteMockServe({
     supportTs: false
-  })]
+  })],
+  server: {
+    // host: '192.168.2.8',
+    // port:8080
+  }
 })
