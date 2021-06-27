@@ -31,7 +31,7 @@ export default defineConfig({
     supportTs: false
   })],
   server: {
-    // host: '192.168.2.8',
-    // port:8080
+    host: '0.0.0.0',
+    port:3000
   }
 })
